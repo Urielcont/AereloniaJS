@@ -1,0 +1,81 @@
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+/* Estilos para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color:#F2F3EB;;
+}
+
+/* Estilos para el contenedor principal */
+#container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+/* Estilos para las etiquetas de los campos */
+label {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"], input[type="number"], select {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los botones */
+button, input[type="button"] {
+  padding: 5px 10px;
+  background-color: #0066cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+#container2 > input {
+  line-height: normal;
+}
+
+#container2 > textarea {
+  overflow: auto;
+}
+
+#container2 {
+  border: solid 3px #474544;
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+  display: none;
+}
+
+
+#container2 > h1 {
+  color: #474544;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>VENTA DE BOLETOS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/style.css'>
+    <script src="../js/objetos.js"></script>
+    <script src="../js/clases.js"></script>
+</head>
+<body>
+  <table align="center">
+
+<form action="../INICIO.html">
+
+  <div id="container">
+
+    <span>Sistema Aeropuerto</span><br>
+
+        <!-- Datos del Cliente -->
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Daniel Adrian">
+
+      <label for="apellido">Apellidos:</label>
+      <input type="text" id="apellido" placeholder="Castro Diaz"><br><br>
+      
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" min="0" max="120" placeholder="18"><br><br>
+
+    
+      <label for="sexo">Sexo:</label>
+        <select id="sexo">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+
+      <label for="nacionalidad">Nacionalidad:</label>
+      <input type="text" id="nacionalidad" placeholder="Mexicana"><br><br>
+      
+
+      <!-- Origen y destino -->
+      <label for="origen">Origen:</label>
+      <input type="text" id="origen" placeholder="Durango">
+
+      <label>Destino:</label>
+        <select id="destino">
+            <option value="1800">Paris - $1800</option>
+            <option value="1300">España - $1300</option>
+            <option value="1200">Estados Unidos - $1200</option>
+            <option value="2000">Japon - $2000</option>
+            <option value="1400">Italia - $1400</option>
+        </select><br><br>
+      
+
+      <!-- Viaje ida y vuelta -->
+      <label>¿Desea Viaje de ida y vuelta?</label>
+      <input type="radio" name="opciv" id="ida" value="ida" checked>Ida
+      <input type="radio" name="opciv" id="idayvuelta" >Ida y vuelta<br><br>
+
+
+      <!-- fechas -->
+      <label for="fechaSalida">Fecha de Ida:</label>
+      <input type="date" id="fechaSalida" min="2023-04-25" max="2024-04-25" value="2023-04-25">
+
+      <label for="horaSalida">Hora de Salida:</label>
+      <input type="time" id="horaSalida" value="10:30"><br>
+
+
+
+      <div id="vuelta-div" style="display: none;">
+
+        <label for="fechaVuelta">Fecha de Vuelta:</label>
+        <input type="date" id="fechaVuelta" min="2023-04-25" max="2024-04-25" value="2023-04-26" >
+
+        <label for="horaVuelta">Hora de Vuelta:</label>
+        <input type="time" id="horaVuelta" value="10:30">
+
+      </div>
+
+
+        <label for="pesoeq">Peso del equipaje en kg:</label>
+        <input type="number" id="pesoeq" placeholder="10" min="0" max="500" value="0" >
+        <!-- <div id="CampoPeso" style="display: none;">
+       <p>Limite 10kg, Se cobrara 300 pesos extra por cada kilo extra Kg extra: <input type="text" disabled value="0" id="kgextraCampo"></p></div><br>
+         -->
+    
+
+        <label>Aerolinea</label>
+        <select id="tAerolinea">
+          <option value="AeroMexico">AeroMexico</option>
+          <option value="American Airlines">American Airlines</option>
+          <option value="TAR">TAR</option>
+          <option value="Volaris">Volaris</option>
+        </select>
+        <div class="div-1">
+              <input type="button" value="Mostrar" onclick="Calcular()" ></input>
+              <input type="button" value="Limpiar" onclick="Limpiar()">
+              <button type="submit">Regresar</button>
+        </div>
+
+
+
+
+   </div>
+  </form>
+</table>
+
+<!-- <table align="center">
+
+  <form>
+
+      <div id="ticket">
+
+        <label>Nombre:</label>
+        <input type="text" disabled>
+
+
+        <label>Apellidos:</label>
+        <input type="text" disabled><br>
+
+
+        <label>Edad</label>
+        <input type="text" disabled>
+
+
+
+
+      </div>
+  </form>
+
+
+</table> -->
+
+
+
+<div id="container2">
+  <h1>&bull; Ticket &bull;</h1>
+
+
+  <form action="#" method="post" id="contact_form">
+    
+      <label for="mosNom">Nombre</label>
+      <input type="text" id="mosNom" disabled>
+
+   
+      <label for="mosApellido">Apellidos:</label>
+      <input type="text" id="mosApellido" disabled><br><br>
+      
+      <label for="mosEdad">Edad:</label>
+      <input type="number" id="mosEdad" disabled>
+
+    
+      <label for="mosSexo">Sexo:</label>
+      <input type="text" id="mosSexo" disabled>
+
+      <label for="mosNacionalidad">Nacionalidad:</label>
+      <input type="text" id="mosNacionalidad"  disabled><br><br>
+      
+      <label for="mosOrigen">Origen:</label>
+      <input type="text" id="mosOrigen" disabled>
+
+      <label for="mosDestino">Destino:</label>
+      <input type="text" id="mosDestino" disabled>
+
+      <label for="mosTipoA">Tipo de Avion</label>
+      <input type="text" id="mosTipoA" disabled><br>
+      
+
+      <!-- Viaje ida y vuelta -->
+      <!-- <label for="mosTip">Tipo de Viaje:</label>
+      <input type="text" name="opciv" id="mosTip"  disabled><br><br> -->
+     
+      <!-- fechas -->
+      <label for="mosFechaSalida">Fecha de Ida:</label>
+      <input type="date" id="mosFechaSalida"  value="2023-04-25" disabled>
+
+      <label for="mosHoraSalida">Hora de Salida:</label>
+      <input type="time" id="mosHoraSalida" value="10:30" disabled><br>
+
+
+
+      <div id="vuelta-div2" style="display: none;">
+
+        <label for="mosFechaVuelta">Fecha de Vuelta:</label>
+        <input type="date" id="mosFechaVuelta" value="2023-04-26" disabled >
+
+        <label for="mosHoraVuelta">Hora de Vuelta:</label>
+        <input type="time" id="mosHoraVuelta" value="10:30" disabled>
+
+      </div>
+
+
+        <label for="mosPesoeq">Peso del equipaje en kg:</label>
+        <input type="text" id="mosPesoeq" disabled><br><br>
+        <!-- <div id="CampoPeso" style="display: none;">
+       <p>Limite 10kg, Se cobrara 300 pesos extra por cada kilo extra Kg extra: <input type="text" disabled value="0" id="kgextraCampo"></p></div><br>
+         -->
+         <label for="mosKgextra">Kg Extra:</label>
+         <input type="text" id="mosKgextra" disabled>
+    
+
+        <label for="mosAero">Aerolinea</label>
+        <input id="mosAero" type="text" disabled><br><br>
+
+        <label for="mosAsiento">Asiento:</label>
+        <input type="text" disabled id="mosAsiento"> <br><br>
+
+        <center>
+
+       
+        <label for="mosCostoBol">Costo de Boleto</label>
+        <input type="text" id="mosCostoBol" disabled><br>
+
+        <label for="mosDesc">Descuento:</label>
+        <input type="text" id="mosDesc" disabled><br>
+      
+
+        <label for="mosPrecioEq">Precio de equipaje:</label>
+        <input type="text" id="mosPrecioEq" disabled><br>
+        <label for="mosPrecioEqEx">Precio extra de equipaje:</label>
+        <input type="text" id="mosPrecioEqEx" disabled><br>
+
+        <label for="mosTot">Total:</label>
+        <input type="text" id="mosTot" disabled>
+      </center>
+      <center>
+        <input type="button" value="Imprimir" id="btn-imprimir" onclick="Imprimirticket()" />
+        <input type="button" value="Comprar Otro" onclick="ComprarOtro()"/>
+        <input type="button" value="Salir" onclick="SalirB()"  />
+      </center>
+    
+     
+    
+  </form><!-- // End form -->
+</div><!-- // End #container -->
+
+
+
+
+
+  <script src="../js/objetos.js"></script>
+  <script src="../js/clases.js"></script>
+</body>
+</html>
